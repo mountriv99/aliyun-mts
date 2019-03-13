@@ -4,6 +4,7 @@ require 'json'
 require_relative 'mts/util'
 require_relative 'mts/media_info'
 require_relative 'mts/snapshot'
+require_relative 'mts/transcoding'
 
 module Aliyun
   module MTS
