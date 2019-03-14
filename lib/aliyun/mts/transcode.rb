@@ -1,6 +1,6 @@
 module Aliyun
 	module MTS
-		module Transcoding
+		module Transcode
 
 			class << self
 
