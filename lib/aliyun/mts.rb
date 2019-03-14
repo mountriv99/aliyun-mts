@@ -1,10 +1,7 @@
 require 'net/https'
 require 'uri'
 require 'json'
-require_relative 'mts/util'
-require_relative 'mts/media_info'
-require_relative 'mts/snapshot'
-require_relative 'mts/transcode'
+Dir[File.join(__dir__, 'mts', '*.rb')].each { |file| require_relative file }
 
 module Aliyun
 	module MTS
