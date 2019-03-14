@@ -7,10 +7,7 @@ module Aliyun
         params[:pipeline_id] = pipeline_id
         params[:user_data]   = user_data
 
-        uri = URI(BASE_URL)
-        uri.query = URI.encode_www_form( Util.signature_params(params))
-        res = Net::HTTP.get_response(uri)
-        JSON.parse res.body
+        Util.get_response(params)
       end
     end
   end
