@@ -7,10 +7,13 @@ require_relative 'mts/snapshot'
 require_relative 'mts/transcode'
 
 module Aliyun
-  module MTS
-    BASE_URL = "https://mts.cn-shanghai.aliyuncs.com"
-    class << self
-      attr_accessor :access_key_id, :access_key_secret
-    end
-  end
+	module MTS
+		class << self
+			attr_accessor :access_key_id, :access_key_secret, :region
+
+			def base_url
+				"https://mts.#{self.region || 'cn.hangzhou'}.aliyuncs.com"
+			end
+		end
+	end
 end

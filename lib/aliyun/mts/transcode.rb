@@ -6,37 +6,34 @@ module Aliyun
 
 				# https://help.aliyun.com/document_detail/29226.html
 				# params: {
-				#	 :Input => {"Bucket":"example-bucket", "Location":"oss-cn-hangzhou", "Object":"example.flv"},
-				#	 :OuputBucket => "example-output-bucket",
-				#	 :OutputLocation => "oss-cn-hangzhou", # optional, defaults to "oss-cn-hangzhou"
-				#	 :Outputs => [{
+				#   :Input => {"Bucket":"example-bucket", "Location":"oss-cn-hangzhou", "Object":"example.flv"},
+				#   :OuputBucket => "example-output-bucket",
+				#   :OutputLocation => "oss-cn-hangzhou", # optional, defaults to "oss-cn-hangzhou"
+				#   :Outputs => [{
 				#      "OutputObject":"example-output.flv",
 				#      "TemplateId":"S00000000-000010", # https://help.aliyun.com/document_detail/29256.html
 				#      "WaterMarks":[{"InputFile":{"Bucket":"example-bucket","Location":"oss-cn-hangzhou","Object":"example-logo.png"},"WaterMarkTemplateId":"88c6ca184c0e47098a5b665e2a126797"}],
 				#      "UserData":"testid-001"
-				#    }],
-				#	 :PipelineId => "example-pipeline-id"
+				#   }],
+				#   :PipelineId => "example-pipeline-id"
 				# }
-				def submit(params)
+				def submit_jobs(params)
 					params = params.merge({:Action => "SubmitJobs"})
 					params[:Input] = params[:Input].to_json
 					params[:Outputs] = params[:Outputs].to_json
 
-					uri = URI(BASE_URL)
-					uri.query = URI.encode_www_form(Util.signature_params(params))
-					res = Net::HTTP.get_response(uri)
-					JSON.parse res.body
+					Util.get_response(params)
 				end
 
-				def cancel
+				def cancel_job
 					# TODO
 				end
 
-				def query
+				def query_job_list
 					# TODO
 				end
 
-				def list
+				def list_job
 					# TODO
 				end
 
