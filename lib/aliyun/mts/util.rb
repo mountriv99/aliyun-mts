@@ -14,6 +14,7 @@ module Aliyun
 				def get_response(params)
 					uri = URI(MTS.base_url)
 					uri.query = URI.encode_www_form(signature_params(params))
+					p uri if MTS.debug
 					res = Net::HTTP.get_response(uri)
 					JSON.parse res.body
 				end
