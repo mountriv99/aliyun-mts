@@ -5,6 +5,7 @@ module Aliyun
 			class << self
 
 				# https://help.aliyun.com/document_detail/44437.html
+				# https://help.aliyun.com/document_detail/68494.html
 				# https://help.aliyun.com/document_detail/68617.html
 				# params: {
 				#   "Topology": {
