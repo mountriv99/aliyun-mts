@@ -18,7 +18,6 @@ module Aliyun
 				#   :PipelineId => "example-pipeline-id"
 				# }
 				def submit_jobs(params)
-p params
 					params = params.merge({:Action => "SubmitJobs"})
 					params[:Input] = params[:Input].to_json
 					params[:Outputs] = params[:Outputs].to_json
