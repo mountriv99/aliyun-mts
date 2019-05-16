@@ -11,7 +11,7 @@ module Aliyun
 				# }
 				# returns: {
 				# 	"RequestId": "25818875-5F78-4A13-BEF6-D7393642CA58",
-				# 	"MediaInfoJob": [{
+				# 	"MediaInfoJob": {
 				# 		"JobId": "88c6ca184c0e47098a5b665e2a126797",
 				# 		"Input": {
 				# 			"Bucket": "example-bucket",
@@ -76,28 +76,28 @@ module Aliyun
 				# 						"Index":"3",
 				# 						"Lang":"eng"
 				# 					}]
-				# 				},
-				# 				"Format":{
-				# 					"NumStreams":"1",
-				# 					"NumPrograms":"2",
-				# 					"FormatName":"matroska,webm",
-				# 					"FormatLongName":"Matroska / WebM",
-				# 					"StartTime":"0.042000",
-				# 					"Duration":"17.600000",
-				# 					"Size":"70569598",
-				# 					"Bitrate":"32077090"
-				# 				},
-				# 				"UserData":"testid-001",
-				# 				"State": "Analyzing",
-				# 				"Code": "",
-				# 				"Message": "",
-				# 				"PipelineId": "88c6ca184c0e47098a5b665e2a126797",
-				# 				"CreationTime":"2014-01-10T12:00:00Z"
+				# 				}
+				# 			},
+				# 			"Format":{
+				# 				"NumStreams":"1",
+				# 				"NumPrograms":"2",
+				# 				"FormatName":"matroska,webm",
+				# 				"FormatLongName":"Matroska / WebM",
+				# 				"StartTime":"0.042000",
+				# 				"Duration":"17.600000",
+				# 				"Size":"70569598",
+				# 				"Bitrate":"32077090"
 				# 			}
-				# 		}
-				# 	}]
+				# 		},
+				# 		"UserData":"testid-001",
+				# 		"State": "Analyzing",
+				# 		"Code": "",
+				# 		"Message": "",
+				# 		"PipelineId": "88c6ca184c0e47098a5b665e2a126797",
+				# 		"CreationTime":"2014-01-10T12:00:00Z"
+				# 	}
 				# }
-				def submit_job(params)
+				def submit_media_info_job(params)
 					params = params.merge({:Action => "SubmitMediaInfoJob"})
 					params[:Input] = params[:Input].to_json
 
