@@ -9,7 +9,7 @@ module Aliyun
 				#   :Input => {"Bucket":"example-bucket", "Location":"oss-cn-hangzhou", "Object":"example.flv"},
 				#   :OuputBucket => "example-output-bucket",
 				#   :OutputLocation => "oss-cn-hangzhou", # optional, defaults to "oss-cn-hangzhou"
-				#   :Outputs => [{
+				#   :Outputs => [{ # https://help.aliyun.com/document_detail/29253.html?#h2-url-2
 				#      "OutputObject":"example-output.flv",
 				#      "TemplateId":"S00000000-000010", # https://help.aliyun.com/document_detail/29256.html
 				#      "WaterMarks":[{"InputFile":{"Bucket":"example-bucket","Location":"oss-cn-hangzhou","Object":"example-logo.png"},"WaterMarkTemplateId":"88c6ca184c0e47098a5b665e2a126797"}],
